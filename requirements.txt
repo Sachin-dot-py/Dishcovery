@@ -1,4 +1,4 @@
-Flask=
+Flask
 Werkzeug
 requests
 mysql-connector-python
