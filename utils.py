@@ -42,7 +42,7 @@ def hash_password(password: str, salt: bytes = None) -> tuple[bytes, bytes]:
 
 
 def send_email(subject: str, content: str, sender: str, receivers: list[str]) -> None:
-    """ Sends an email from the FoodShare email account """
+    """ Sends an email from the Dishcovery email account """
     # message = MIMEMultipart("alternative")
     # message["Subject"] = subject
     # message["From"] = sender

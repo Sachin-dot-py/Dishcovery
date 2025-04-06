@@ -10,17 +10,17 @@ SUPPORT_EMAIL = "FoodShare31@gmail.com"
 WELCOME_TEMPLATE = """
 Hi {fname},
 <br><br>
-Welcome to FoodShare and thanks for joining!
+Welcome to Dishcovery and thanks for joining!
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 RESET_PASSWORD_TEMPLATE = """ 	
 Hi {fname},
 <br><br>
-To reset your FoodShare account password, please click the link below.
+To reset your Dishcovery account password, please click the link below.
 <br><br>
 <a href="{link}">RESET PASSWORD</a>
 <br><br>
@@ -30,31 +30,31 @@ If you did not request a password reset, please contact us at <a href="mailto:{S
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 RESET_PASSWORD_NOTIFICATION = """ 	
 Hi {fname},
 <br><br>
-This is to notify you that your FoodShare account password <b>has been reset</b>. 
+This is to notify you that your Dishcovery account password <b>has been reset</b>. 
 <br><br>
 If you did not perform this reset, please contact us <b>immediately</b> at <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>.
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 CHANGE_PASS_NOTIF = """ 	
 Hi {fname},
 <br><br>
-This is to notify you that your FoodShare account password <b>has been changed</b>. 
+This is to notify you that your Dishcovery account password <b>has been changed</b>. 
 <br><br>
 If you did not perform this action, please contact us <b>immediately</b> at <a href="mailto:{SUPPORT_EMAIL}">{SUPPORT_EMAIL}</a>.
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 ORDER_CONFIRM_BUYER = """
@@ -68,7 +68,7 @@ You will also receive an email once your order is ready for collection.
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 ORDER_CONFIRM_SELLER = """
@@ -86,7 +86,7 @@ You can view the order details and update its status <a href="{link}">here</a>.
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 ORDER_CANCELLED_BY_BUYER = """
@@ -96,7 +96,7 @@ This is to notify you that your order <b>#{orderid}</b> has been cancelled by th
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 ORDER_CANCELLED_BY_SELLER = """
@@ -106,7 +106,7 @@ This is to notify you that your order <b>#{orderid}</b> has been cancelled by th
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 ORDER_READY_FOR_COLLECTION = """
@@ -122,7 +122,7 @@ Please proceed to the below restaurant to collect your order.
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """
 
 CONTACT_US_RESPONSE = """
@@ -134,5 +134,5 @@ You have received a new {nature} from {fname} {lname} ({email}).
 <br><br>
 Regards,
 <br>
-The <i>FoodShare</i> Team
+The <i>Dishcovery</i> Team
 """

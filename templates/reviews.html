@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ restaurant.name }} Reviews - FoodShare</title>
+    <title>{{ restaurant.name }} Reviews - Dishcovery</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 {% if is_owner %}
 <div class="navbar">
-    <!-- FoodShare Logo -->
+    <!-- Dishcovery Logo -->
     <a href="{{  url_for('home_page') }}" style="margin:0px;  padding: 0px;">
         <img src="{{ url_for('static', filename='logo.png') }}" height="48px" width="100px"
              style="vertical-align:top; border-bottom: 1px solid #333;">
@@ -25,7 +25,7 @@
 <h1 style="text-align: center;">Your Customer Reviews</h1>
 {% else %}
 <div class="navbar">
-    <!-- FoodShare Logo -->
+    <!-- Dishcovery Logo -->
     <a href="{{  url_for('home_page') }}" style="margin:0px;  padding: 0px;">
         <img src="{{ url_for('static', filename='logo.png') }}" height="48px" width="100px"
              style="vertical-align:top; border-bottom: 1px solid #333;">
@@ -34,7 +34,7 @@
     <a href="{{  url_for('change_password') }}"><i class="fa fa-edit"></i> &nbsp;Edit Profile</a>
     <a href="{{ url_for('buyer_orders') }}"><i class="fa fa-credit-card"></i> &nbsp;My Orders</a>
     <a href="{{ url_for('view_cart') }}"><i class="fa fa-shopping-cart"></i> &nbsp;Cart</a>
-    <a href="/contact_us"><i class="fa fa-envelope"></i> &nbsp;Contact FoodShare</a>
+    <a href="/contact_us"><i class="fa fa-envelope"></i> &nbsp;Contact Dishcovery</a>
     <a href="{{  url_for('logout_page') }}" class="split">Logout &nbsp;<i class="fa fa-sign-out"></i></a>
     <a href="{{  url_for('seller_dashboard') }}" class="split">Switch to Seller View &nbsp;<i
             class="fa fa-angle-double-right"></i></a>

@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Invoice #{{ order.orderid }} - FoodShare</title>
+    <title>Invoice #{{ order.orderid }} - Dishcovery</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='invoice.css') }}">
 </head>
 <body>
-<h1>FoodShare Invoice #{{ order.orderid }}</h1>
+<h1>Dishcovery Invoice #{{ order.orderid }}</h1>
 <br>
 <div class="invoice-box">
     <table>
@@ -16,7 +16,7 @@
                 <table>
                     <tr>
                         <td class="title">
-                            <img src="{{ url_for('static', filename='logo.png') }}" alt="FoodShare logo"
+                            <img src="{{ url_for('static', filename='logo.png') }}" alt="Dishcovery logo"
                                  style="width: 100%; max-width: 300px"/>
                         </td>
                         <td>

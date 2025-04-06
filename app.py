@@ -122,7 +122,7 @@ def sign_up_page():
                                      request.form['address'],
                                      coordinates[0], coordinates[1], request.form['password'])
                 message = WELCOME_TEMPLATE.format(fname=request.form['fname'])
-                send_email("Welcome to FoodShare", message, COMMS_EMAIL, [request.form['email']])
+                send_email("Welcome to Dishcovery", message, COMMS_EMAIL, [request.form['email']])
                 # Sign the user in and redirect to the dashboard
                 session['email'] = request.form['email']
                 session['userid'] = userid
@@ -208,7 +208,7 @@ def contact_us():
         message = CONTACT_US_RESPONSE.format(fname=request.form['fname'], lname=request.form['lname'],
                                              email=request.form['email'], message=request.form['message'],
                                              nature=request.form['nature'])
-        send_email(f"New {request.form['nature'].lower()} from FoodShare", message, COMMS_EMAIL, [SUPPORT_EMAIL])
+        send_email(f"New {request.form['nature'].lower()} from Dishcovery", message, COMMS_EMAIL, [SUPPORT_EMAIL])
 
         return render_template("contact_us.html", signed_in=bool(session.get('email')),
                                alert="Your message has been sent. We will get back to you shortly.")
