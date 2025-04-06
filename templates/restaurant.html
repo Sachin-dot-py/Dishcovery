@@ -13,11 +13,11 @@
 </head>
 <body>
 <div class="navbar">
-    <!-- Dishcovery Logo -->
-    <a href="{{  url_for('home_page') }}" style="margin:0px;  padding: 0px;">
-        <img src="{{ url_for('static', filename='logo.png') }}" height="48px" width="100px"
-             style="vertical-align:top; border-bottom: 1px solid #333;">
-    </a>
+    <div class="navbar-top">
+        <h1>Dishcovery</h1>
+        <p>Every meal is a discovery</p>
+    </div>
+
     <a href="{{  url_for('buyer_dashboard') }}"><i class="fa fa-cutlery"></i> &nbsp;Restaurants</a>
     <a href="{{  url_for('change_password') }}"><i class="fa fa-edit"></i> &nbsp;Edit Profile</a>
     <a href="{{ url_for('buyer_orders') }}"><i class="fa fa-credit-card"></i> &nbsp;My Orders</a>
