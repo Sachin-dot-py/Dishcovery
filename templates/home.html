@@ -79,15 +79,92 @@
 
     <div class="search-container">
         <div class="search-box">
-          <input type="text" placeholder="Enter a keyword to search">
+            <input type="text" id="search-input" placeholder="Enter a keyword to search" oninput="filterResults()">
         </div>
         <div class="categories">
-          <span>Breakfast</span>
-          <span>Sandwiches</span>
-          <span>Pasta & Noodles</span>
-          <span>Autumn</span>
+            <span>Breakfast</span>
+            <span>Sandwiches</span>
+            <span>Pasta & Noodles</span>
+            <span>Autumn</span>
         </div>
-      </div>
+    </div>
+    <div id="search-results" class="search-results">
+        <!-- Search results will appear here -->
+    </div>
+
+    <script>
+        const dummyResults = [
+            { item: "Egg and Green Bowl Salad", supplier: "Alex Misty" },
+            { item: "Grapefruit Cocktails", supplier: "Alex Misty" },
+            { item: "Mushroom Chicken", supplier: "Alex Misty" },
+            { item: "Pasta Primavera", supplier: "Jamie Oliver" },
+            { item: "Autumn Pumpkin Soup", supplier: "Gordon Ramsay" },
+            { item: "Breakfast Burrito", supplier: "Rachel Ray" },
+            { item: "Chicken Sandwich", supplier: "Ina Garten" },
+            { item: "Spaghetti Carbonara", supplier: "Nigella Lawson" }
+        ];
+
+        function filterResults() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = '';
+
+            const filteredResults = dummyResults.filter(entry => 
+                entry.item.toLowerCase().includes(input) || entry.supplier.toLowerCase().includes(input)
+            );
+
+            filteredResults.forEach(entry => {
+                const resultItem = document.createElement('div');
+                resultItem.className = 'result-item';
+
+                const itemName = document.createElement('div');
+                itemName.textContent = entry.item;
+                itemName.className = 'item-name';
+
+                const supplierName = document.createElement('div');
+                supplierName.textContent = `Supplier: ${entry.supplier}`;
+                supplierName.className = 'supplier-name';
+
+                resultItem.appendChild(itemName);
+                resultItem.appendChild(supplierName);
+                resultsContainer.appendChild(resultItem);
+            });
+        }
+    </script>
+
+    <style>
+        .search-results {
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 92.5%;
+            margin-top: -30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+
+        .result-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .result-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .supplier-name {
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
 
     <script src="{{ url_for('static', filename='main.js') }}"></script>
     {% if alert %}
