@@ -42,3 +42,6 @@ next-env.d.ts
 
 secret_config.py
 FoodShare.log
+
+# local env files
+myenv/
