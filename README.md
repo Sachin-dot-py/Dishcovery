@@ -50,7 +50,10 @@ Dishcovery provides a dedicated platform that:
   Python with Flask and Jinja templates
 
 - **Database:**  
-  OpenRouteService API, Google Maps API and MySQL
+  MySQL
+
+- **APIs:**  
+  OpenRouteService API, Google Maps API
 
 ---
 
