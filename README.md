@@ -56,7 +56,7 @@ Dishcovery provides a dedicated platform that:
 
 ## How It Works
 
-**Homecooks** register, set up their profiles, and update daily menus with comprehensive dietary information.
-**Buyers** explore available homecooks (sorted by proximity), review menus, and place orders.
-**Order Processing:**  Automated email notifications are sent for order placement, status updates, and 
+Homecooks register, set up their profiles, and update daily menus with comprehensive dietary information.
+Buyers explore available homecooks (sorted by proximity), review menus, and place orders.
+Automated email notifications are sent for order placement, status updates, and 
 cancellations. Detailed invoices are generated for every order.
