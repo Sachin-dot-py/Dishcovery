@@ -1,4 +1,4 @@
-WEBSITE_BASE_URL = "http://127.0.0.1:5000"  # To change in production
+WEBSITE_BASE_URL = "http://dish-covery.tech/"  # To change in production
 
 ALLOWED_FILE_EXTENSIONS = ('.png', '.jpg', '.jpeg', '.gif')
 EMAIL_REGEX = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'  # Regex for email validation
