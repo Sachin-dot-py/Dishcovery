@@ -6,6 +6,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <style>
 .switch {
   position: relative;
@@ -77,7 +81,7 @@ input:checked + .slider:before {
     </a>
     <a href="{{  url_for('seller_dashboard') }}" class="active"><i class="fa fa-credit-card"></i> &nbsp;My Orders</a>
     <a href="{{  url_for('edit_restaurant') }}"><i class="fa fa-edit"></i> &nbsp;Edit Restaurant/Menu</a>
-    <a href="/reviews/view/{{ restaurant.restid }}"><i class="fa fa-pencil"></i> &nbsp;My Restaurant Reviews</a>
+    <a href="/reviews/view/{{ restaurant.restid }}">My Restaurant Reviews</a>
     <a href="{{  url_for('logout_page') }}" class="split">Logout &nbsp;<i class="fa fa-sign-out"></i></a>
     <a href="{{  url_for('buyer_dashboard') }}" class="split">Switch to Buyer View &nbsp;<i
             class="fa fa-angle-double-right"></i></a>

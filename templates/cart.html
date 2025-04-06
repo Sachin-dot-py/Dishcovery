@@ -1,91 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Cart - Dishcovery</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-<div class="navbar">
-    <!-- Dishcovery Logo -->
-    <a href="{{  url_for('home_page') }}" style="margin:0px;  padding: 0px;">
-        <img src="{{ url_for('static', filename='logo.png') }}" height="48px" width="100px"
-             style="vertical-align:top; border-bottom: 1px solid #333;">
-    </a>
-    <a href="{{  url_for('buyer_dashboard') }}"><i class="fa fa-cutlery"></i> &nbsp;Restaurants</a>
-    <a href="{{  url_for('change_password') }}"><i class="fa fa-edit"></i> &nbsp;Edit Profile</a>
-    <a href="{{ url_for('buyer_orders') }}"><i class="fa fa-credit-card"></i> &nbsp;My Orders</a>
-    <a href="{{ url_for('view_cart') }}" class="active"><i class="fa fa-shopping-cart"></i> &nbsp;Cart</a>
-    <a href="/contact_us"><i class="fa fa-envelope"></i> &nbsp;Contact Dishcovery</a>
-    <a href="{{  url_for('logout_page') }}" class="split">Logout &nbsp;<i class="fa fa-sign-out"></i></a>
-    <a href="{{  url_for('seller_dashboard') }}" class="split">Switch to Seller View &nbsp;<i
-            class="fa fa-angle-double-right"></i></a>
-</div>
-<center>
-    {% if cart %}
-    <br><br>
-    <div class="card">
-        <h1>Purchasing from {{ restaurant.name }}</h1>
-        <div class="container" style="text-align: left;">
-            <b>{{ restaurant.name }}</b>,
-            <br>
-            {{ restaurant.address.replace("\n", "<br>") }}
-        </div>
+    <div class="navbar">
+        <!-- Dishcovery Logo -->
+        <a href="{{  url_for('home_page') }}" style="margin:0px;  padding: 0px;">
+            <img src="{{ url_for('static', filename='logo.png') }}" height="48px" width="100px"
+                style="vertical-align:top; border-bottom: 1px solid #333;">
+        </a>
+        <a href="{{  url_for('buyer_dashboard') }}"><i class="fa fa-cutlery"></i> &nbsp;Restaurants</a>
+        <a href="{{  url_for('change_password') }}"><i class="fa fa-edit"></i> &nbsp;Edit Profile</a>
+        <a href="{{ url_for('buyer_orders') }}"><i class="fa fa-credit-card"></i> &nbsp;My Orders</a>
+        <a href="{{ url_for('view_cart') }}" class="active"><i class="fa fa-shopping-cart"></i> &nbsp;Cart</a>
+        <a href="/contact_us">Contact Dishcovery</a>
+        <a href="{{  url_for('logout_page') }}" class="split">Logout &nbsp;<i class="fa fa-sign-out"></i></a>
+        <a href="{{  url_for('seller_dashboard') }}" class="split">Switch to Seller View &nbsp;<i
+                class="fa fa-angle-double-right"></i></a>
     </div>
-    <h1>Order Summary</h1>
-    <table cellspacing=0 class="tables">
-        <tr>
-            <th>Item</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-        </tr>
-        {% for item in cart %}
-        <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>${{ "%.2f"|format(item.price) }}</td>
-            <td>${{ "%.2f"|format(item.total) }}</td>
-        </tr>
-        {% endfor %}
-        <tr>
-            <td colspan=3 style="text-align: right;"><b>TOTAL</b></td>
-            <td>${{ "%.2f"|format(total) }}</td>
-        </tr>
-        <tr>
-            <form method="POST" action="/cart/submit">
-                <td style="padding: 0px; margin: 0px;" colspan="2">
-                    <button type="submit" name="action" value="checkout" class="button tablebutton" style="background-color: #8FD9A8;">
-                        <span>Checkout </span></button>
-                </td>
-                <td style="padding: 0px; margin: 0px;" colspan="2">
-                    <button type="submit" name="action" value="clear" class="button tablebutton"
+    <center>
+        {% if cart %}
+        <br><br>
+        <div class="card">
+            <h1>Purchasing from {{ restaurant.name }}</h1>
+            <div class="container" style="text-align: left;">
+                <b>{{ restaurant.name }}</b>,
+                <br>
+                {{ restaurant.address.replace("\n", "<br>") }}
+            </div>
+        </div>
+        <h1>Order Summary</h1>
+        <table cellspacing=0 class="tables">
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            {% for item in cart %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>${{ "%.2f"|format(item.price) }}</td>
+                <td>${{ "%.2f"|format(item.total) }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td colspan=3 style="text-align: right;"><b>TOTAL</b></td>
+                <td>${{ "%.2f"|format(total) }}</td>
+            </tr>
+            <tr>
+                <form method="POST" action="/cart/submit">
+                    <td style="padding: 0px; margin: 0px;" colspan="2">
+                        <button type="submit" name="action" value="checkout" class="button tablebutton"
+                            style="background-color: #8FD9A8;">
+                            <span>Checkout </span></button>
+                    </td>
+                    <td style="padding: 0px; margin: 0px;" colspan="2">
+                        <button type="submit" name="action" value="clear" class="button tablebutton"
                             style="background-color: #f44336;"><span>Clear Cart </span></button>
-                </td>
-            </form>
-        </tr>
-    </table>
-    <br>
-    <p>Not done yet? <a href="/restaurants/{{ restaurant.restid }}">Add more items</a> to your cart before placing your
-        order.</p>
-    <br><br>
-    {% else %}
-    <br><br>
-    <div class="card">
-        <h1>Your cart is empty.</h1>
-        <div class="container" style="text-align: left;">
-            <p>Your cart is empty. Go <a href="/restaurants">add some items</a> from our variety of restaurants.</p>
+                    </td>
+                </form>
+            </tr>
+        </table>
+        <br>
+        <p>Not done yet? <a href="/restaurants/{{ restaurant.restid }}">Add more items</a> to your cart before placing
+            your
+            order.</p>
+        <br><br>
+        {% else %}
+        <br><br>
+        <div class="card">
+            <h1>Your cart is empty.</h1>
+            <div class="container" style="text-align: left;">
+                <p>Your cart is empty. Go <a href="/restaurants">add some items</a> from our variety of restaurants.</p>
+            </div>
         </div>
-    </div>
+        {% endif %}
+        <div id="snackbar"></div>
+    </center>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    {% if alert %}
+    <script>
+        notify("{{ alert }}");
+    </script>
     {% endif %}
-    <div id="snackbar"></div>
-</center>
-<script src="{{ url_for('static', filename='main.js') }}"></script>
-{% if alert %}
-<script>
-    notify("{{ alert }}");
-</script>
-{% endif %}
 </body>
+
 </html>
