@@ -1,6 +1,6 @@
 # Dishcovery
 
-Dishcovery is our hackathon project—a web app that revolutionizes community food-sharing by connecting local homecooks with nearby food enthusiasts. It streamlines order management, ensures accurate dietary information, and eliminates the hassle of manual calculations and miscommunications.
+Our project, Dishcovery is a web app that revolutionizes community food-sharing by connecting local homecooks with nearby food enthusiasts. It streamlines order management, ensures accurate dietary information, and eliminates the hassle of manual calculations and miscommunications.
 
 ---
 
