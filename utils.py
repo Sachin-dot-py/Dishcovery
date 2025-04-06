@@ -43,16 +43,16 @@ def hash_password(password: str, salt: bytes = None) -> tuple[bytes, bytes]:
 
 def send_email(subject: str, content: str, sender: str, receivers: list[str]) -> None:
     """ Sends an email from the FoodShare email account """
-    message = MIMEMultipart("alternative")
-    message["Subject"] = subject
-    message["From"] = sender
-    message["To"] = ",".join(receivers)
-    message.attach(MIMEText(content, "html"))
+    # message = MIMEMultipart("alternative")
+    # message["Subject"] = subject
+    # message["From"] = sender
+    # message["To"] = ",".join(receivers)
+    # message.attach(MIMEText(content, "html"))
 
-    context = ssl.create_default_context()
-    with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
-        server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-        server.sendmail(sender, ",".join(receivers), message.as_string())
+    # context = ssl.create_default_context()
+    # with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
+    #     server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+    #     server.sendmail(sender, ",".join(receivers), message.as_string())
 
 
 class ORS:
