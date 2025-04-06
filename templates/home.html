@@ -53,52 +53,41 @@
     <div class="content">
         <table style="width: 100%; border-collapse: separate; border-spacing: 15px;">
             <tr>
-            <td style="width: 33.33%; background-color: #ddd5ca; text-align: center; padding: 20px;">
-            <img src="static/dish-1.png" style="max-width: 100%; height: auto; margin-bottom: 10px;">
-            <div class="key">BAKERY, Salad</div>
-            <br>
-            <h3>Egg and Green Bowl Salad</h3>
-            <p>By Alex Misty</p>
-            </td>
-            <td style="width: 33.33%; background-color: #ddd5ca; text-align: center; padding: 20px;">
-            <img src="static/dish-2.png" style="max-width: 100%; height: auto; margin-bottom: 10px;">
-            <div class="key">Appetizer, Drinks</div>
-            <h3>Grapefruit Cocktails</h3>
-            <p>By Alex Misty</p>
-            </td>
-            <td style="width: 33.33%; background-color: #ddd5ca; text-align: center; padding: 20px;">
-            <img src="static/dish-3.png" style="max-width: 100%; height: auto; margin-bottom: 10px;">
-            <div class="key">Dinner</div>
-            <h3>Mushroom Chicken</h3>
-            <p>By Alex Misty</p>
-            </td>
+                <td style="width: 33.33%; background-color: #ddd5ca; text-align: center; padding: 20px;">
+                    <img src="static/dish-1.png" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+                    <div class="key">BAKERY, Salad</div>
+                    <br>
+                    <h3>Egg and Green Bowl Salad</h3>
+                    <p>By Alex Misty</p>
+                </td>
+                <td style="width: 33.33%; background-color: #ddd5ca; text-align: center; padding: 20px;">
+                    <img src="static/dish-2.png" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+                    <div class="key">Appetizer, Drinks</div>
+                    <h3>Grapefruit Cocktails</h3>
+                    <p>By Alex Misty</p>
+                </td>
+                <td style="width: 33.33%; background-color: #ddd5ca; text-align: center; padding: 20px;">
+                    <img src="static/dish-3.png" style="max-width: 100%; height: auto; margin-bottom: 10px;">
+                    <div class="key">Dinner</div>
+                    <h3>Mushroom Chicken</h3>
+                    <p>By Alex Misty</p>
+                </td>
             </tr>
         </table>
     </div>
     <br>
-    <p>
-        Now, we've properly established as a business. From the comfort of your home, you can order delicious and
-        quality home-made food from your neighbours. We've made it easy for you to order food from your local
-        households, and we've made it easy for the home chefs to make money from their cooking, without spending any
-        extra effort!
-    </p>
-    <p>
-        Our goal is that everyone can effortlessly make money from their cooking, without the hassle associated with
-        setting up a restaurant. You can either cook part of your meal and purchase the rest from our many
-        restaurants, or you can purchase the entire meal yourself. It's up to you!
-    </p>
-    <p>
-        Do note that there is no delivery service, so you will have to pick up your food from the home chef's house.
-    </p>
-    <p>
-        We hope you enjoy your experience with Dishcovery! To sign up, click <a href="/sign_up">here</a>.
-    </p>
-    <p>
-        If you have any questions, don't hesitate to contact us through our <a href="/contact_us">online form</a>.
-    </p>
-    </div>
 
-    <div id="snackbar"></div>
+    <div class="search-container">
+        <div class="search-box">
+          <input type="text" placeholder="Enter a keyword to search">
+        </div>
+        <div class="categories">
+          <span>Breakfast</span>
+          <span>Sandwiches</span>
+          <span>Pasta & Noodles</span>
+          <span>Autumn</span>
+        </div>
+      </div>
 
     <script src="{{ url_for('static', filename='main.js') }}"></script>
     {% if alert %}
